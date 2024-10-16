@@ -52,7 +52,7 @@ module.exports.createFile = async (req , res) => {
     const appAddress = appDir.split("\\").filter(item => item !== "backend").join("\\")
     
     try{
-        fs.writeFileSync(`${appAddress}/${path}`)
+        fs.writeFileSync(`${appAddress}/${path}`, "")
         res.json({message : "File Created"})
     }catch(err){
         console.log(err)
