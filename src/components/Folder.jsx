@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { IoIosArrowDown , IoIosArrowUp } from "react-icons/io";
-import { FaFileCirclePlus } from "react-icons/fa6";
-import { FaFolderPlus } from "react-icons/fa";
+import File from "./File";
 import axios from 'axios'
 import {useSelector} from 'react-redux'
 import CreateFolderModal from "./CreateFolderModal";
+import CreateFileModal from "./CreateFileModal";
 
 const Folder = ({path}) => {
 
@@ -38,15 +38,13 @@ const Folder = ({path}) => {
         </button>
         <div className={`${isOpen ? "flex" : "hidden"}`}>
             <CreateFolderModal path={path}/>
-            <button onClick={()=>{
-                console.log(path)
-            }} className="p-2 text-[20px]"><FaFileCirclePlus/></button>
+            <CreateFileModal path={path}/>
         </div>
         <div className={`${isOpen ? "flex flex-col" : "hidden"}`}>
             {dataList?.map(item => (
                 <div key={item} className="px-2 py-2 my-2">
                     {item.includes(".") ? (
-                        <div>{path}/{item}</div>
+                        <File path={`${path}/${item}`}/>
                     ) : (
                         <Folder path={`${path}/${item}`}/>
                     )}
