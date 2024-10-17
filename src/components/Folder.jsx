@@ -5,8 +5,9 @@ import axios from 'axios'
 import {useSelector} from 'react-redux'
 import CreateFolderModal from "./CreateFolderModal";
 import CreateFileModal from "./CreateFileModal";
+import DeleteModal from "./DeleteModal";
 
-const Folder = ({path}) => {
+const Folder = ({path , isDeletable}) => {
 
     const [isOpen , setIsOpen] = useState(false)
 
@@ -39,6 +40,7 @@ const Folder = ({path}) => {
         <div className={`${isOpen ? "flex" : "hidden"}`}>
             <CreateFolderModal path={path}/>
             <CreateFileModal path={path}/>
+            {isDeletable && <DeleteModal path={path}/>}
         </div>
         <div className={`${isOpen ? "flex flex-col" : "hidden"}`}>
             {dataList?.map(item => (
@@ -46,7 +48,7 @@ const Folder = ({path}) => {
                     {item.includes(".") ? (
                         <File path={`${path}/${item}`}/>
                     ) : (
-                        <Folder path={`${path}/${item}`}/>
+                        <Folder isDeletable={true} path={`${path}/${item}`}/>
                     )}
                 </div>
             ))}

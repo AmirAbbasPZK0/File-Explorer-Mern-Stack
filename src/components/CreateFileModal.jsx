@@ -18,7 +18,7 @@ const CreateFileModal = ({path}) => {
             <div className="flex items-center justify-evenly flex-row gap-4">
                 <button onClick={()=>{
                     axios({
-                        url :`${import.meta.env.VITE_BASE_URL}/api/system/create-file`,
+                        url :`${import.meta.env.VITE_BASE_URL}/api/system/file`,
                         method : "POST",
                         data : {path : `${path}/${fileName}`},
                         headers : {

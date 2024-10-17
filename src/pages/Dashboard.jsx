@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     return (<>
         <div className="pt-4 p-3">
-            <Folder path={"/root"}/>
+            <Folder isDeletable={false} path={"/root"}/>
         </div>
     </>);
 }
