@@ -5,11 +5,13 @@ const systemRouter = express.Router()
 systemRouter.route("/")
 .post(systemController.getAllData)
 
-systemRouter.route("/create-file")
+systemRouter.route("/file")
 .post(systemController.createFile)
+.delete(systemController.deleteFile)
 
-systemRouter.route("/create-folder")
+
+systemRouter.route("/folder")
 .post(systemController.createFolder)
-
+.delete(systemController.deleteFolder)
 
 module.exports = systemRouter
