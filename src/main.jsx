@@ -9,6 +9,8 @@ import Login from './pages/Login.jsx'
 import {store} from './redux/store.js'
 import { Provider } from 'react-redux'
 import Dashboard from './pages/Dashboard.jsx'
+import FileManager from './pages/FileManager.jsx'
+import Profile from './pages/Profile.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       {
         element : <Dashboard/>,
         path : "/dashboard"
+      },
+      {
+        element : <FileManager/>,
+        path : "/dashboard/file-manager"
+      },
+      {
+        element : <Profile/>,
+        path : "/dashboard/profile"
       }
     ]
   }

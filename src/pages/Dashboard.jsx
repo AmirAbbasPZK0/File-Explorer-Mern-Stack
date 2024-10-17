@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import Folder from '../components/Folder'
+import FileManagerImage from '../../public/file-manager.png'
+import ProfileImage from '../../public/profile.png'
+import DashboardCard from '../components/DashboardCard'
 
 const Dashboard = () => {
 
@@ -16,8 +18,12 @@ const Dashboard = () => {
     },[])
 
     return (<>
-        <div className="pt-4 p-3">
-            <Folder isDeletable={false} path={"/root"}/>
+        <div className="flex items-start flex-col justify-start p-4 gap-3">
+            <h1 className='text-[50px]'>Dashboard</h1>
+            <div className='flex flex-wrap gap-4'>
+                <DashboardCard link={"/dashboard/file-manager"} title={"File Explorer"} image={FileManagerImage}/>
+                <DashboardCard link={"/dashboard/profile"} title={"Profile"} image={ProfileImage}/>
+            </div>
         </div>
     </>);
 }
