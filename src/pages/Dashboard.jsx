@@ -15,8 +15,6 @@ const Dashboard = () => {
         }
     },[])
 
-    
-
     return (<>
         <div className="pt-4 p-3">
             <Folder isDeletable={false} path={"/root"}/>

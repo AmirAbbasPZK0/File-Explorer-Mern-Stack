@@ -40,7 +40,7 @@ const Folder = ({path , isDeletable}) => {
         <div className={`${isOpen ? "flex" : "hidden"}`}>
             <CreateFolderModal path={path}/>
             <CreateFileModal path={path}/>
-            {isDeletable && <DeleteModal path={path}/>}
+            {isDeletable && <DeleteModal folderOrFile="folder" path={path}/>}
         </div>
         <div className={`${isOpen ? "flex flex-col" : "hidden"}`}>
             {dataList?.map(item => (

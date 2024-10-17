@@ -3,7 +3,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const DeleteModal = ({path}) => {
+const DeleteModal = ({path , folderOrFile}) => {
     
     const [open , setOpen] = useState(false)
 
@@ -15,7 +15,7 @@ const DeleteModal = ({path}) => {
             <div className="flex items-center justify-evenly flex-row gap-4">
                 <button onClick={()=>{
                     axios({
-                        url :`${import.meta.env.VITE_BASE_URL}/api/system/folder`,
+                        url :`${import.meta.env.VITE_BASE_URL}/api/system/${folderOrFile}`,
                         method : "DELETE",
                         data : {path},
                         headers : {
