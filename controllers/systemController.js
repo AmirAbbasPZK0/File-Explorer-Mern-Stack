@@ -78,6 +78,8 @@ module.exports.createFile = async (req , res) => {
 }
 
 module.exports.deleteFile = async (req , res) => {
+
+    const token = req.headers.authorization
     
     if(!token){
         res.status(401).json({message : "UnAuthorized" , action : false})
