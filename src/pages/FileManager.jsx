@@ -17,7 +17,7 @@ const FileManager = () => {
 
     return (<>
         <div className="pt-4 p-3">
-            <Folder isDeletable={false} path={"/root"}/>
+            <Folder isDeletable={false} path={"root"}/>
         </div>
     </>);
 }
