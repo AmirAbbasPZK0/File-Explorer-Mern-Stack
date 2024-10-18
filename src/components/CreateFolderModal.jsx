@@ -19,6 +19,9 @@ const CreateFolderModal = ({path}) => {
             </label>
             <div className="flex items-center justify-evenly flex-row gap-4">
                 <button onClick={()=>{
+                    if(folderName.includes('.')){
+                        return false
+                    }
                     axios({
                         url :`${import.meta.env.VITE_BASE_URL}/api/system/folder`,
                         method : "POST",

@@ -31,8 +31,8 @@ const Folder = ({path , isDeletable}) => {
     return (<>
         <button onClick={()=>{
             setIsOpen(item => !item)
-        }} className="flex w-[100%] p-4 cursor-pointer rounded-sm items-center justify-between bg-slate-300">
-            <h1>{path.split("/")[path.split("/").length - 1]}</h1>
+        }} className="flex w-[100%] p-4 cursor-pointer transition rounded-sm items-center justify-between bg-slate-300 hover:bg-slate-700 hover:text-slate-50">
+            <h1>/{path.split("/")[path.split("/").length - 1]}</h1>
             <div className="flex items-center gap-2">
                 <h3>{isOpen ? <IoIosArrowUp/> : <IoIosArrowDown/>}</h3>
             </div>

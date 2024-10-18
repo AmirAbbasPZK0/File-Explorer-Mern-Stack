@@ -1,4 +1,4 @@
-import DeleteModal from "./DeleteModal";
+import ChosenIcon from "./ChosenIcon";
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import axios from "axios";
@@ -10,11 +10,15 @@ const File = ({path}) => {
     
     const token = useSelector(state => state?.user?.data?.token)
 
+    const title = path.split("/")[path.split("/").length - 1]
+
+    const endPoint = title.split(".")[1]
+
     return (<>
-        <div onClick={()=>{
+        <button onClick={()=>{
             setOpen(item => !item)
-        }} className="text-white bg-red-700 p-3 rounded-md flex flex-row justify-between">
-            <h3>{path.split("/")[path.split("/").length - 1]}</h3>
+        }} className="text-white bg-red-500 p-3 rounded-md flex transition hover:bg-red-900 flex-row justify-between w-[100%]">
+            <h3 className="flex flex-row gap-2">/{title.split(".")[0]} <ChosenIcon endPoint={endPoint}/></h3>
             <div className={`${open ? "flex" : "hidden"} flex-col items-center`}>
                 <button onClick={()=>{
                     axios({
@@ -29,7 +33,7 @@ const File = ({path}) => {
                     })
                 }}><FaTrashAlt/></button>
             </div>
-        </div>
+        </button>
     </>);
 }
  

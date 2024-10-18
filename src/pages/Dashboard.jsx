@@ -21,7 +21,7 @@ const Dashboard = () => {
         <div className="flex items-start flex-col justify-start p-4 gap-3">
             <h1 className='text-[50px]'>Dashboard</h1>
             <div className='flex flex-wrap gap-4'>
-                <DashboardCard link={"/dashboard/file-manager"} title={"File Explorer"} image={FileManagerImage}/>
+                <DashboardCard link={"/dashboard/file-manager"} title={"File Manager"} image={FileManagerImage}/>
                 <DashboardCard link={"/dashboard/profile"} title={"Profile"} image={ProfileImage}/>
             </div>
         </div>
